@@ -1,0 +1,28 @@
+{
+  "id": "58309f11-1512-4fb5-a39c-bac8d1bc87eb",
+  "name": "Master Data Changes",
+  "publisher": "DSS",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.44",
+  
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [
+  
+  ],
+  "screenshots": [],
+  "platform": "9.0.0.0",
+  "application": "9.0.0.0",
+  "target": "Internal",
+  "showMyCode": true,
+  
+  "idRange": {
+    "from": 50000,
+    "to": 50149
+  }
+}

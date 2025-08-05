@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="STRSUBSTNO_Text000_PeriodText_">
+          <DataField>STRSUBSTNO_Text000_PeriodText_</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="PrintOnlyOnePerPage">
+          <DataField>PrintOnlyOnePerPage</DataField>
+        </Field>
+        <Field Name="Customer_TABLECAPTION__________CustFilter">
+          <DataField>Customer_TABLECAPTION__________CustFilter</DataField>
+        </Field>
+        <Field Name="CustFilter">
+          <DataField>CustFilter</DataField>
+        </Field>
+        <Field Name="Value_Entry__TABLECAPTION__________ItemLedgEntryFilter">
+          <DataField>Value_Entry__TABLECAPTION__________ItemLedgEntryFilter</DataField>
+        </Field>
+        <Field Name="ItemLedgEntryFilter">
+          <DataField>ItemLedgEntryFilter</DataField>
+        </Field>
+        <Field Name="Customer__No__">
+          <DataField>Customer__No__</DataField>
+        </Field>
+        <Field Name="Customer_Name">
+          <DataField>Customer_Name</DataField>
+        </Field>
+        <Field Name="Customer__Phone_No__">
+          <DataField>Customer__Phone_No__</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Sales_Amount__Actual__">
+          <DataField>ValueEntryBuffer__Sales_Amount__Actual__</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Sales_Amount__Actual__Format">
+          <DataField>ValueEntryBuffer__Sales_Amount__Actual__Format</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Discount_Amount_">
+          <DataField>ValueEntryBuffer__Discount_Amount_</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Discount_Amount_Format">
+          <DataField>ValueEntryBuffer__Discount_Amount_Format</DataField>
+        </Field>
+        <Field Name="Profit">
+          <DataField>Profit</DataField>
+        </Field>
+        <Field Name="ProfitFormat">
+          <DataField>ProfitFormat</DataField>
+        </Field>
+        <Field Name="ProfitPct">
+          <DataField>ProfitPct</DataField>
+        </Field>
+        <Field Name="ProfitPctFormat">
+          <DataField>ProfitPctFormat</DataField>
+        </Field>
+        <Field Name="Customer_Item_SalesCaption">
+          <DataField>Customer_Item_SalesCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="All_amounts_are_in_LCYCaption">
+          <DataField>All_amounts_are_in_LCYCaption</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Item_No__Caption">
+          <DataField>ValueEntryBuffer__Item_No__Caption</DataField>
+        </Field>
+        <Field Name="Item_DescriptionCaption">
+          <DataField>Item_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Invoiced_Quantity_Caption">
+          <DataField>ValueEntryBuffer__Invoiced_Quantity_Caption</DataField>
+        </Field>
+        <Field Name="Item__Base_Unit_of_Measure_Caption">
+          <DataField>Item__Base_Unit_of_Measure_Caption</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Sales_Amount__Actual___Control44Caption">
+          <DataField>ValueEntryBuffer__Sales_Amount__Actual___Control44Caption</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Discount_Amount__Control45Caption">
+          <DataField>ValueEntryBuffer__Discount_Amount__Control45Caption</DataField>
+        </Field>
+        <Field Name="Profit_Control46Caption">
+          <DataField>Profit_Control46Caption</DataField>
+        </Field>
+        <Field Name="ProfitPct_Control47Caption">
+          <DataField>ProfitPct_Control47Caption</DataField>
+        </Field>
+        <Field Name="Customer__Phone_No__Caption">
+          <DataField>Customer__Phone_No__Caption</DataField>
+        </Field>
+        <Field Name="TotalCaption">
+          <DataField>TotalCaption</DataField>
+        </Field>
+        <Field Name="Customer_Name_Caption">
+          <DataField>Customer_Name_Caption</DataField>
+        </Field>
+        <Field Name="Sales_OrderNo_Caption">
+          <DataField>Sales_OrderNo_Caption</DataField>
+        </Field>
+        <Field Name="Production_OrderNo_Caption">
+          <DataField>Production_OrderNo_Caption</DataField>
+        </Field>
+        <Field Name="Description1_Caption">
+          <DataField>Description1_Caption</DataField>
+        </Field>
+        <Field Name="Description2_Caption">
+          <DataField>Description2_Caption</DataField>
+        </Field>
+        <Field Name="ProjectDimension_Caption">
+          <DataField>ProjectDimension_Caption</DataField>
+        </Field>
+        <Field Name="CountryDimension_Caption">
+          <DataField>CountryDimension_Caption</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_CustomerNo">
+          <DataField>CustomerItemSales_CustomerNo</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_CustomerName">
+          <DataField>CustomerItemSales_CustomerName</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_SalesOrderNo_">
+          <DataField>CustomerItemSales_SalesOrderNo_</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ProdOrderNo">
+          <DataField>CustomerItemSales_ProdOrderNo</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemNo">
+          <DataField>CustomerItemSales_ItemNo</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_Description1">
+          <DataField>CustomerItemSales_Description1</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_Description2">
+          <DataField>CustomerItemSales_Description2</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_GlobalDimension1Code">
+          <DataField>CustomerItemSales_GlobalDimension1Code</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_GlobalDimension2Code">
+          <DataField>CustomerItemSales_GlobalDimension2Code</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_UOM">
+          <DataField>CustomerItemSales_UOM</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_InvoicedQuantity">
+          <DataField>CustomerItemSales_InvoicedQuantity</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_InvoicedQuantityFormat">
+          <DataField>CustomerItemSales_InvoicedQuantityFormat</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_CostAmount">
+          <DataField>CustomerItemSales_CostAmount</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_CostAmountFormat">
+          <DataField>CustomerItemSales_CostAmountFormat</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_DiscountAmount">
+          <DataField>CustomerItemSales_DiscountAmount</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_DiscountAmountFormat">
+          <DataField>CustomerItemSales_DiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_InvoicedAmount">
+          <DataField>CustomerItemSales_InvoicedAmount</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_InvoicedAmountFormat">
+          <DataField>CustomerItemSales_InvoicedAmountFormat</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ProfitAmount">
+          <DataField>CustomerItemSales_ProfitAmount</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ProfitAmountFormat">
+          <DataField>CustomerItemSales_ProfitAmountFormat</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ProfitPercentage">
+          <DataField>CustomerItemSales_ProfitPercentage</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ProfitPercentageFormat">
+          <DataField>CustomerItemSales_ProfitPercentageFormat</DataField>
+        </Field>
+        <Field Name="ItemBrand_Item">
+          <DataField>ItemBrand_Item</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Item_No__">
+          <DataField>ValueEntryBuffer__Item_No__</DataField>
+        </Field>
+        <Field Name="Item_Description">
+          <DataField>Item_Description</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Invoiced_Quantity_">
+          <DataField>ValueEntryBuffer__Invoiced_Quantity_</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Invoiced_Quantity_Format">
+          <DataField>ValueEntryBuffer__Invoiced_Quantity_Format</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Sales_Amount__Actual___Control44">
+          <DataField>ValueEntryBuffer__Sales_Amount__Actual___Control44</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Sales_Amount__Actual___Control44Format">
+          <DataField>ValueEntryBuffer__Sales_Amount__Actual___Control44Format</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Discount_Amount__Control45">
+          <DataField>ValueEntryBuffer__Discount_Amount__Control45</DataField>
+        </Field>
+        <Field Name="ValueEntryBuffer__Discount_Amount__Control45Format">
+          <DataField>ValueEntryBuffer__Discount_Amount__Control45Format</DataField>
+        </Field>
+        <Field Name="Profit_Control46">
+          <DataField>Profit_Control46</DataField>
+        </Field>
+        <Field Name="Profit_Control46Format">
+          <DataField>Profit_Control46Format</DataField>
+        </Field>
+        <Field Name="ProfitPct_Control47">
+          <DataField>ProfitPct_Control47</DataField>
+        </Field>
+        <Field Name="ProfitPct_Control47Format">
+          <DataField>ProfitPct_Control47Format</DataField>
+        </Field>
+        <Field Name="Item__Base_Unit_of_Measure_">
+          <DataField>Item__Base_Unit_of_Measure_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://zadubs-navnew1",
+            "serverInstance": "AssaAbloy_UAELive",
+            "port": 7049,
+            "serverInstance": "AssaAbloy_UAELive",
+
+            // "server": "http://zadubs-navnew1",
+            // "port": 7149,
+            // "serverInstance": "AssaAbloy_UAEUat",
+            "authentication": "Windows",
+            "tenant": "default",
+           
+        }
+    ]
+}
