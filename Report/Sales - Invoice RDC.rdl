@@ -2311,7 +2311,7 @@
                                           </TablixMember>
                                           <TablixMember>
                                             <Visibility>
-                                              <Hidden>=Iif(Fields!Type_SalesInvLine.Value = " ", true, false)</Hidden>
+                                              <Hidden>=IIF(IsNothing(Fields!Qty_SalesInvLine.Value),True,false)</Hidden>
                                             </Visibility>
                                             <KeepWithGroup>After</KeepWithGroup>
                                             <KeepTogether>true</KeepTogether>

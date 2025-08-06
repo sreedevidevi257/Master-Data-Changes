@@ -95,18 +95,18 @@ pageextension 50106 Pag46_Ext50106_BTR extends "sales order Subform"
 
         }
         addafter("Shortcut Dimension 2 Code"){
-            field("Shortcut Dimension 2 Code_DSSS"; Rec."Shortcut Dimension 2 Code_DSSS")
-            {
-                ApplicationArea = all;
-                trigger OnValidate()
-                begin
-                    CurrPage.update();
-                end;
-            }
+            // field("Shortcut Dimension 2 Code_DSSS"; Rec."Shortcut Dimension 2 Code_DSSS")
+            // {
+            //     ApplicationArea = all;
+            //     trigger OnValidate()
+            //     begin
+            //         CurrPage.update();
+            //     end;
+            // }
         }
          modify("Shortcut Dimension 2 Code")
         {
-            Visible = false;
+            Visible = true;
         }
 
     }
@@ -122,7 +122,7 @@ pageextension 50106 Pag46_Ext50106_BTR extends "sales order Subform"
                     HighlightText := TRUE;
             END;
         END;
-          Rec."Shortcut Dimension 2 Code_DSSS" := Rec."Shortcut Dimension 2 Code";
+         // Rec."Shortcut Dimension 2 Code_DSSS" := Rec."Shortcut Dimension 2 Code";
     end;
 
     var

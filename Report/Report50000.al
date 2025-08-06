@@ -2,7 +2,7 @@ report 50000 "Sales - Invoice Yale"
 {
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    RDLCLayout = './Report/Sales - Invoice Yale.rdlc';
+    RDLCLayout = './Report/Sales - Invoice Yale.rdl';
     Caption = 'Sales - Invoice Yale';
     EnableHyperlinks = true;
     Permissions = TableData "Sales Shipment Buffer"=rimd;
@@ -302,6 +302,7 @@ report 50000 "Sales - Invoice Yale"
                         DataItemLink = "Document No."=FIELD("No.");
                         DataItemLinkReference = "Sales Invoice Header";
                         DataItemTableView = SORTING("Document No.","Line No.");
+
                         column(gInt;gInt)
                         {
                         }

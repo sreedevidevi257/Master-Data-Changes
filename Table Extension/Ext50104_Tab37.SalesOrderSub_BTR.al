@@ -64,11 +64,11 @@ tableextension 50104 Ext50104_SalesOrderSub_BTR extends "Sales Line"
             Caption = 'Shortcut Dimension 2 Code';
             TableRelation = "User Account_DSS"."Dimension Value" where("Dimension Code" = const('HFM ENTITY'), "User ID" =
                                                                        field("User ID"), "Dimension Code" = filter(<> ''));
-            trigger OnValidate()
-            begin
-                Rec.ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code_DSSS");
-                Rec."Shortcut Dimension 2 Code" := Rec."Shortcut Dimension 2 Code_DSSS";
-            end;
+            // trigger OnValidate()
+            // begin
+            //     Rec.ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code_DSSS");
+            //     Rec."Shortcut Dimension 2 Code" := Rec."Shortcut Dimension 2 Code_DSSS";
+            // end;
         }
     }
 

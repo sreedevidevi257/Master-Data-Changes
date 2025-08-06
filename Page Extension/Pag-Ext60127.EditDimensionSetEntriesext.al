@@ -11,19 +11,19 @@ pageextension 50002 "Edit Dimension Set Entriesext" extends "Edit Dimension Set 
         }
         modify(DimensionValueCode)
         {
-            Visible = false;
+            Visible = true;
         }
 
         addafter(DimensionValueCode)
         {
-            field("Dimension Value DS"; Rec."Dimension Value DS")
-            {
-                ApplicationArea = All;
-                trigger OnValidate()
-                begin
-                    CurrPage.Update();
-                end;
-            }
+            // field("Dimension Value DS"; Rec."Dimension Value DS")
+            // {
+            //     ApplicationArea = All;
+            //     trigger OnValidate()
+            //     begin
+            //         CurrPage.Update();
+            //     end;
+            // }
 
         }
     }

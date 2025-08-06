@@ -30,21 +30,21 @@ pageextension 50107 "Bank Sales Order" extends "Sales Order"
             {
             }
         }
-        addafter("Shortcut Dimension 2 Code")
-        {
+        // addafter("Shortcut Dimension 2 Code")
+        // {
 
-            field("Shortcut Dimension 2 Code_DSSS"; Rec."Shortcut Dimension 2 Code_DSSS")
-            {
-                ApplicationArea = all;
-                trigger OnValidate()
-                begin
-                    CurrPage.Update();
-                end;
-            }
-        }
+        //     field("Shortcut Dimension 2 Code_DSSS"; Rec."Shortcut Dimension 2 Code_DSSS")
+        //     {
+        //         ApplicationArea = all;
+        //         trigger OnValidate()
+        //         begin
+        //             CurrPage.Update();
+        //         end;
+        //     }
+        // }
          modify("Shortcut Dimension 2 Code")
         {
-            Visible = false;
+            Visible = true;
         }
 
     }
@@ -91,7 +91,7 @@ pageextension 50107 "Bank Sales Order" extends "Sales Order"
     }
     trigger OnAfterGetRecord()
     begin
-        Rec."Shortcut Dimension 2 Code_DSSS" := Rec."Shortcut Dimension 2 Code";
+      //  Rec."Shortcut Dimension 2 Code_DSSS" := Rec."Shortcut Dimension 2 Code";
     end;
     var
         DocPrint: Codeunit 229;

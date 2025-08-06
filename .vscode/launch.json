@@ -6,16 +6,21 @@
             "request": "launch",
             "type": "al",
             "environmentType": "OnPrem",
-            "server": "http://zadubs-navnew1",
-            "serverInstance": "AssaAbloy_UAELive",
+            "server": "http://ZADUBS-NAVNEW1.ad.global:8080/AssaAbloy_UAELive/Webclient",
+           // "serverInstance": "AssaAbloy_UAELive",
             "port": 7049,
             "serverInstance": "AssaAbloy_UAELive",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+           "tenant": "default",
 
             // "server": "http://zadubs-navnew1",
             // "port": 7149,
             // "serverInstance": "AssaAbloy_UAEUat",
             "authentication": "Windows",
-            "tenant": "default",
+
+            "schemaUpdateMode": "Synchronize"
            
         }
     ]

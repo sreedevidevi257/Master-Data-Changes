@@ -50,7 +50,7 @@ codeunit 50100 "Sales Events"
         if ((Rec."Dimension Code" = 'HFM ENTITY') and ((Rec."User ID" ='') or (Rec."User ID" <> '')))then
         begin
                 Rec."User ID" := UserId;
-                Rec."Dimension Value DS" := Rec."Dimension Value Code";
+                //Rec."Dimension Value DS" := Rec."Dimension Value Code";
         end;
 
     end;

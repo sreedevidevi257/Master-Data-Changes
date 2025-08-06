@@ -17,14 +17,14 @@ tableextension 50103 "Bank Sales Header" extends "Sales Header"
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             TableRelation = "User Account_DSS"."Dimension Value" where("Dimension Code" = const('HFM ENTITY'), "User ID" = field("User ID"), "Dimension Code" = filter(<> ''));
-            trigger OnValidate()
-            begin
+            // trigger OnValidate()
+            // begin
                 
-                //Rec.ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code_DSSS");
-                Rec.Validate("Shortcut Dimension 2 Code",Rec."Shortcut Dimension 2 Code_DSSS");
-                Rec."Shortcut Dimension 2 Code" := Rec."Shortcut Dimension 2 Code_DSSS";
+            //     //Rec.ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code_DSSS");
+            //     Rec.Validate("Shortcut Dimension 2 Code",Rec."Shortcut Dimension 2 Code_DSSS");
+            //     Rec."Shortcut Dimension 2 Code" := Rec."Shortcut Dimension 2 Code_DSSS";
                 
-            end;
+            // end;
         }
 
         field(50103; "User ID"; Text[50])
