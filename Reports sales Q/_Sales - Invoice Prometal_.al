@@ -23,6 +23,51 @@ report 50002 "Sales - Invoice Prometal"
             "No.")
             {
             }
+            //  column(Prepayment__; "Prepayment %")
+            // {
+
+            // }
+            column(AdcPayment; _AdcPayment)
+                {
+
+                }
+               
+                column(TotalAdcPayment; _TotalAdcPayment)
+                {
+
+                }
+                column(TotalLessRetention; _TotalLessRetention)
+                {
+
+                }
+                column(netamounttotal; _NetAmountTotal)
+                {
+           
+                }           
+                column(netInclVat; _NetInclVat)
+                {
+
+                }  
+                 column(TotalVATAmount;
+                        TotalAmountVAT)
+                        {
+                            AutoFormatExpression = "Sales Invoice Header"."Currency Code";
+                            AutoFormatType = 1;
+                        }   column(TotalInvDiscAmount;TotalInvDiscAmount)
+                        {
+                            AutoFormatExpression = "Sales Invoice Header"."Currency Code";
+                            AutoFormatType = 1;
+                        }
+                          column(TotalSubTotal; TotalSubTotal){
+                            AutoFormatExpression = "Sales Invoice Header"."Currency Code";
+                            AutoFormatType = 1;
+                          }
+                        
+            column(Retention__; "Retention %")
+            {
+
+            }
+
             column(Currency_Code; "Currency Code")
             {
 
@@ -528,6 +573,7 @@ report 50002 "Sales - Invoice Prometal"
                         gInt)
                         {
                         }
+                    column(DocumentNo;"Document No."){}
                         column(LineAmt_SalesInvLine;
                         "Line Amount")
                         {
@@ -586,17 +632,15 @@ report 50002 "Sales - Invoice Prometal"
                             AutoFormatExpression = GetCurrencyCode;
                             AutoFormatType = 1;
                         }
-                        column(TotalSubTotal;
-                        TotalSubTotal)
-                        {
-                            AutoFormatExpression = "Sales Invoice Header"."Currency Code";
-                            AutoFormatType = 1;
-                        }
-                        column(TotalInvDiscAmount;TotalInvDiscAmount)
-                        {
-                            AutoFormatExpression = "Sales Invoice Header"."Currency Code";
-                            AutoFormatType = 1;
-                        }
+                      
+                            column(TotalExcludingVATText; TotalExclVATText)
+                {
+                }
+                column(TotalIncludingVATText; TotalInclVATText)
+                {
+                }
+              
+              
                         column(TotalText;
                         TotalText)
                         {
@@ -643,14 +687,7 @@ report 50002 "Sales - Invoice Prometal"
                             AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                             AutoFormatType = 1;
                         }
-                        column(TotalAmountVAT;
-                        TotalAmountVAT)
-                        {
-                            AutoFormatExpression = "Sales Invoice Header"."Currency Code";
-                            AutoFormatType = 1;
-                        }
-                        column(LineAmtAfterInvDiscAmt;
-                        -("Line Amount" - "Inv. Discount Amount" - "Amount Including VAT"))
+                        column(LineAmtAfterInvDiscAmt;-("Line Amount" - "Inv. Discount Amount" - "Amount Including VAT"))
                         {
                             AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                             AutoFormatType = 1;
@@ -960,6 +997,11 @@ report 50002 "Sales - Invoice Prometal"
                             TotalAmountVAT += "Amount Including VAT" - Amount;
                             TotalAmountInclVAT += "Amount Including VAT";
                             TotalPaymentDiscOnVAT += -("Line Amount" - "Inv. Discount Amount" - "Amount Including VAT");
+                    _TotalExclVat += "Line Amount" - "Inv. Discount Amount";
+                   
+                    _TotalLessRetention := _TotalExclVat * "Sales Invoice Header"."Retention %" / 100;
+                    _NetAmountTotal := TotalSubTotal - TotalInvDiscAmount - _TotalAdcPayment - _TotalLessRetention;
+                    _NetInclVat := _NetAmountTotal + TotalAmountVAT;
                             IF LayoutType = LayoutType::Door THEN BEGIN
                                 VariableDetail[1] := "PDN  No.";
                                 VariableDetail[2] := '';
@@ -1226,8 +1268,7 @@ report 50002 "Sales - Invoice Prometal"
                             if ISEMPTY then CurrReport.BREAK;
                         end;
                     }
-                    dataitem(Total;
-                    "Integer")
+                    dataitem(Total;"Integer")
                     {
                         DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
 
@@ -1275,6 +1316,7 @@ report 50002 "Sales - Invoice Prometal"
                         "Sales Invoice Header".FIELDCAPTION("Sell-to Customer No."))
                         {
                         }
+                        
                         trigger OnPreDataItem();
                         begin
                             if not ShowShippingAddr then CurrReport.BREAK;
@@ -1552,6 +1594,13 @@ report 50002 "Sales - Invoice Prometal"
         TotalAmountVAT: Decimal;
         TotalInvDiscAmount: Decimal;
         TotalPaymentDiscOnVAT: Decimal;
+         _NetAmountTotal: Decimal;
+        _NetInclVat: Decimal;
+        _AdcPayment: Decimal;
+        _TotalExclVat: Decimal;
+        _TotalAdcPayment: Decimal;
+    
+        _TotalLessRetention: Decimal;
         [InDataSet]
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
