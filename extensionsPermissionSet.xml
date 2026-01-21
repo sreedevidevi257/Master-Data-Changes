@@ -21,6 +21,13 @@
       <ExecutePermission>1</ExecutePermission>
       <SecurityFilter />
     </Permission>
+
+      <Permissions>
+    <Permission ObjectType="TableData" ObjectID="50000" ReadPermission="Yes" InsertPermission="Yes" ModifyPermission="Yes" DeletePermission="Yes" />
+    <Permission ObjectType="TableData" ObjectID="2000000001" ReadPermission="Yes" />
+  </Permissions>
+
+
     <Permission>
       <ObjectID>50101</ObjectID>
       <ObjectType>0</ObjectType>
