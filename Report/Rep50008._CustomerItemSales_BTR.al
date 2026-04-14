@@ -174,10 +174,15 @@ report 50008 "Assa - Customer/Item Sales"
                         CustomerItemSalesBuffer."Description 1" := Item.Description;
                         CustomerItemSalesBuffer."Description 2" := Item."Description 2";
                         CustomerItemSalesBuffer."PGR Code" := Item."Item Category Code";
-                        //CustomerItemSalesBuffer."PGR Code 2" := Item.PGR2;//@@HA
+                        CustomerItemSalesBuffer."PGR Code 2" := Item.PGR2;//@@HA
                         CustomerItemSalesBuffer."Sub Category 1" := Item."Sub Category 1";
                         CustomerItemSalesBuffer."Sub Category 2" := Item."Sub Category 2";
                         CustomerItemSalesBuffer."Unit of Measure" := Item."Base Unit of Measure";
+                        CustomerItemSalesBuffer."Item Category PGR 1" := Item."Item Category PGR 1";
+                        CustomerItemSalesBuffer."Item Category PGR 2" := Item."Item Category PGR 2";//@@HA
+                        CustomerItemSalesBuffer."Item Category PGR 3" := Item."Item Category PGR 3";
+                        CustomerItemSalesBuffer."Item Category PGR 4" := Item."Item Category PGR 4";
+
 
                         DimensionSetEntry.Reset;
                         DimensionSetEntry.SETRANGE("Dimension Set ID", "Dimension Set ID");
@@ -400,17 +405,21 @@ report 50008 "Assa - Customer/Item Sales"
                 EnterCell(ExcelLineNo, 6, CustomerItemSalesBuffer."Description 1", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
                 EnterCell(ExcelLineNo, 7, CustomerItemSalesBuffer."Description 2", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
                 EnterCell(ExcelLineNo, 8, CustomerItemSalesBuffer."PGR Code", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-                EnterCell(ExcelLineNo, 9, CustomerItemSalesBuffer."PGR Code 2", false, false, '', ExcelBuf."Cell Type"::Text);//@@HA
-                EnterCell(ExcelLineNo, 10, CustomerItemSalesBuffer."Sub Category 1", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-                EnterCell(ExcelLineNo, 11, CustomerItemSalesBuffer."Sub Category 2", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-                EnterCell(ExcelLineNo, 12, CustomerItemSalesBuffer."Global Dimension 1 Code", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-                EnterCell(ExcelLineNo, 13, CustomerItemSalesBuffer."Global Dimension 2 Code", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-                EnterCell(ExcelLineNo, 14, CustomerItemSalesBuffer."Unit of Measure", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
-                EnterCell(ExcelLineNo, 15, FORMAT(CustomerItemSalesBuffer."Invoiced Quantity"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
-                EnterCell(ExcelLineNo, 16, FORMAT(CustomerItemSalesBuffer."Cost Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
-                EnterCell(ExcelLineNo, 17, FORMAT(CustomerItemSalesBuffer."Discount Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
-                EnterCell(ExcelLineNo, 18, FORMAT(CustomerItemSalesBuffer."Invoiced Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
-                EnterCell(ExcelLineNo, 19, FORMAT(CustomerItemSalesBuffer."Profit Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+                EnterCell(ExcelLineNo, 9, CustomerItemSalesBuffer."PGR Code 2", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 10, CustomerItemSalesBuffer."Item Category PGR 1", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 11, CustomerItemSalesBuffer."Item Category PGR 2", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 12, CustomerItemSalesBuffer."Item Category PGR 3", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 13, CustomerItemSalesBuffer."Item Category PGR 4", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 14, CustomerItemSalesBuffer."Sub Category 1", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 15, CustomerItemSalesBuffer."Sub Category 2", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 16, CustomerItemSalesBuffer."Global Dimension 1 Code", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 17, CustomerItemSalesBuffer."Global Dimension 2 Code", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 18, CustomerItemSalesBuffer."Unit of Measure", FALSE, FALSE, '', ExcelBuf."Cell Type"::Text);
+                EnterCell(ExcelLineNo, 19, FORMAT(CustomerItemSalesBuffer."Invoiced Quantity"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+                EnterCell(ExcelLineNo, 20, FORMAT(CustomerItemSalesBuffer."Cost Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+                EnterCell(ExcelLineNo, 21, FORMAT(CustomerItemSalesBuffer."Discount Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+                EnterCell(ExcelLineNo, 22, FORMAT(CustomerItemSalesBuffer."Invoiced Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
+                EnterCell(ExcelLineNo, 23, FORMAT(CustomerItemSalesBuffer."Profit Amount"), FALSE, FALSE, '', ExcelBuf."Cell Type"::Number);
                 ExcelLineNo += 1;
             end;
 
@@ -544,6 +553,11 @@ report 50008 "Assa - Customer/Item Sales"
         LastEntry: Boolean;
         PGRCodeLbl: Label 'PGR Code';
         PGRCodeLbl2: Label 'PGR Code 2';
+
+        ItemCategoryPGR1Lbl: Label 'Item Category PGR 1';
+        ItemCategoryPGR2Lbl: Label 'Item Category PGR 2';
+        ItemCategoryPGR3Lbl: Label 'Item Category PGR 3';
+        ItemCategoryPGR4Lbl: Label 'Item Category PGR 4';
         SubCategory1Lbl: Label 'Sub Category 1';
         SubCategory2Lbl: Label 'Sub Category 2';
 
@@ -565,16 +579,18 @@ report 50008 "Assa - Customer/Item Sales"
         EnterCell(ExcelLineNo, 7, Description2CaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
         EnterCell(ExcelLineNo, 8, PGRCodeLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
         EnterCell(ExcelLineNo, 9, PGRCodeLbl2, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 10, SubCategory1Lbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 11, SubCategory2Lbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 12, CountryCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 13, ProjectCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 14, Item__Base_Unit_of_Measure_CaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 15, QtyInvoicedCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 16, CostAmountCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 17, DiscountAmtCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 18, InvoicedAmountCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
-        EnterCell(ExcelLineNo, 19, ProfitAmtCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 10, ItemCategoryPGR1Lbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 11, ItemCategoryPGR2Lbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 12, ItemCategoryPGR3Lbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 13, ItemCategoryPGR4Lbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 14, CountryCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 15, ProjectCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 16, Item__Base_Unit_of_Measure_CaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 17, QtyInvoicedCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 18, CostAmountCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 19, DiscountAmtCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 20, InvoicedAmountCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
+        EnterCell(ExcelLineNo, 21, ProfitAmtCaptionLbl, TRUE, TRUE, '', ExcelBuf."Cell Type"::Text);
     end;
 
     local procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean; UnderLine: Boolean; NumberFormat: Text[30]; CellType: Option);

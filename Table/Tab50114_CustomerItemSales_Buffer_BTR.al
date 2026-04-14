@@ -84,6 +84,18 @@ table 50120 "Customer Item Sales Buffer"
         field(19; "Sub Category 2"; Code[20])
         {
         }
+            field(21;"Item Category PGR 1";Code[20])
+            {
+            }
+    field(22;"Item Category PGR 2";Code[20])
+    {
+    }
+    field(23;"Item Category PGR 3";Code[20])
+    {
+    }
+    field(24;"Item Category PGR 4";Code[20])
+    {
+    }
     }
 
     keys
