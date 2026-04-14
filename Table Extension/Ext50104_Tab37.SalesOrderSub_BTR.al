@@ -15,6 +15,11 @@ tableextension 50104 Ext50104_SalesOrderSub_BTR extends "Sales Line"
                     Origin := RecItem."Country/Region of Origin Code";
                     "Manufacturer Code" := RecItem."Vendor No.";
                     "HS Code" := recItem."Tariff No.";
+                    "Item Category PGR 1" := RecItem."Item Category PGR 1";
+                    "Item Category PGR 2" := RecItem."Item Category PGR 2";
+                    "Item Category PGR 3" := RecItem."Item Category PGR 3";
+                    "Item Category PGR 4" := RecItem."Item Category PGR 4";
+                    
                end;
                "User ID":= UserId;
             End;
@@ -69,6 +74,22 @@ tableextension 50104 Ext50104_SalesOrderSub_BTR extends "Sales Line"
             //     Rec.ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code_DSSS");
             //     Rec."Shortcut Dimension 2 Code" := Rec."Shortcut Dimension 2 Code_DSSS";
             // end;
+        }
+        field(50128;"Item Category PGR 1";Code[50])
+        {
+            editable = false;
+        }
+        field(50129;"Item Category PGR 2";Code[50])
+        {
+            editable = false;
+        }
+        field(50130;"Item Category PGR 3";Code[50])
+        {
+            editable = false;
+        }
+        field(50131;"Item Category PGR 4";Code[50])
+        {
+            editable = false;
         }
     }
 

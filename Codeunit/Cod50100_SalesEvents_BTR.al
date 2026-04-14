@@ -64,6 +64,24 @@ codeunit 50100 "Sales Events"
         end;
 
     end;
+      [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnAfterCopyItemJnlLineFromSalesLine', '', false, false)]
+    local procedure OnBeforeInsertItemJournalEvent(SalesLine: Record "Sales Line"; var ItemJnlLine: Record "Item Journal Line")
+    var
+    begin
+        ItemJnlLine."Item Category PGR 1" := SalesLine."Item Category PGR 1";
+        ItemJnlLine."Item Category PGR 2" := SalesLine."Item Category PGR 2";
+        ItemJnlLine."Item Category PGR 3" := SalesLine."Item Category PGR 3";
+        ItemJnlLine."Item Category PGR 4" := SalesLine."Item Category PGR 4";
+    end;
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnBeforeInsertItemLedgEntry', '', false, false)]
+    local procedure OnBeforeInsertItemLedgEntry(var ItemLedgerEntry: Record "Item Ledger Entry"; ItemJournalLine: Record "Item Journal Line")
+    var
+    begin
+        ItemLedgerEntry."Item Category PGR 1" := ItemJournalLine."Item Category PGR 1";
+        ItemLedgerEntry."Item Category PGR 2" := ItemJournalLine."Item Category PGR 2";
+        ItemLedgerEntry."Item Category PGR 3" := ItemJournalLine."Item Category PGR 3";
+        ItemLedgerEntry."Item Category PGR 4" := ItemJournalLine."Item Category PGR 4";
+    end;
     
 [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterSalesInvLineInsert', '', false, false)]
   procedure UpdateSalesInvoiceLine(var SalesInvLine: Record "Sales Invoice Line"; SalesInvHeader: Record "Sales Invoice Header"; SalesLine: Record "Sales Line"; ItemLedgShptEntryNo: Integer;WhseShip: Boolean; WhseReceive: Boolean)

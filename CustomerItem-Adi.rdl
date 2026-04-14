@@ -6920,6 +6920,42 @@ End Function
         <Field Name="CustomerItemSales_Description2">
           <DataField>CustomerItemSales_Description2</DataField>
         </Field>
+        <Field Name="CustomerItemSales_PGRCode">
+          <DataField>CustomerItemSales_PGRCode</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_PGRCode2">
+          <DataField>CustomerItemSales_PGRCode2</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCategoryPGR1">
+          <DataField>CustomerItemSales_ItemCategoryPGR1</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCatPGRDesc1">
+          <DataField>CustomerItemSales_ItemCatPGRDesc1</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCategoryPGR2">
+          <DataField>CustomerItemSales_ItemCategoryPGR2</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCatPGRDesc2">
+          <DataField>CustomerItemSales_ItemCatPGRDesc2</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCategoryPGR3">
+          <DataField>CustomerItemSales_ItemCategoryPGR3</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCatPGRDesc3">
+          <DataField>CustomerItemSales_ItemCatPGRDesc3</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCategoryPGR4">
+          <DataField>CustomerItemSales_ItemCategoryPGR4</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_ItemCatPGRDesc4">
+          <DataField>CustomerItemSales_ItemCatPGRDesc4</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_SubCategory1">
+          <DataField>CustomerItemSales_SubCategory1</DataField>
+        </Field>
+        <Field Name="CustomerItemSales_SubCategory2">
+          <DataField>CustomerItemSales_SubCategory2</DataField>
+        </Field>
         <Field Name="CustomerItemSales_GlobalDimension1Code">
           <DataField>CustomerItemSales_GlobalDimension1Code</DataField>
         </Field>

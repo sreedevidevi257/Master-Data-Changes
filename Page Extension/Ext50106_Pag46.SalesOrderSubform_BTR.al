@@ -91,8 +91,11 @@ pageextension 50106 Pag46_Ext50106_BTR extends "sales order Subform"
                 Style = Attention;
                 StyleExpr = HighlightText;
             }
+            field("Item Category PGR 1";"Item Category PGR 1"){}
 
-
+            field("Item Category PGR 2";"Item Category PGR 2"){}
+            field("Item Category PGR 3";"Item Category PGR 3"){}
+            field("Item Category PGR 4";"Item Category PGR 4"){}
         }
         addafter("Shortcut Dimension 2 Code"){
             // field("Shortcut Dimension 2 Code_DSSS"; Rec."Shortcut Dimension 2 Code_DSSS")

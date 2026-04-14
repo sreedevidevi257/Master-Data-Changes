@@ -25,6 +25,18 @@ tableextension 50106 Ext50106_SalesInvLine_BTR extends "Sales Invoice Line"
         field(50125;"Cust. Ref #";Text[20])
         {            
         }
+        field(50128;"Item Category PGR 1";Code[50])
+        {    
+        }
+        field(50129;"Item Category PGR 2";Code[50])
+        {
+        }
+        field(50130;"Item Category PGR 3";Code[50])
+        {
+        }
+        field(50131;"Item Category PGR 4";Code[50])
+        {
+        }
     }
 
 
