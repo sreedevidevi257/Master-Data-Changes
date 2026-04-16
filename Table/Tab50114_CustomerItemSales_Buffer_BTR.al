@@ -84,29 +84,38 @@ table 50120 "Customer Item Sales Buffer"
         field(19; "Sub Category 2"; Code[20])
         {
         }
-        field(21;"Item Category PGR 1";Code[50])
+        field(21;"Item Category PGR 1";Code[100])
         {
             
         }
-        field(22;"Item Category PGR 2";Code[50])
+        field(22;"Item Category PGR 2";Code[100])
         {
         }
-        field(23;"Item Category PGR 3";Code[50])
+        field(23;"Item Category PGR 3";Code[100])
         {
         }
-        field(24;"Item Category PGR 4";Code[50])
+        field(24;"Item Category PGR 4";Code[100])
         {
         }
-        field(25;"Item Cat. PGR Description 1";Code[100])
+        field(25;"Item Cat. PGR Description 1";Code[200])
         {
         }
-         field(26;"Item Cat. PGR Description 2";Code[100])
+         field(26;"Item Cat. PGR Description 2";Code[200])
         {
         }
-         field(27;"Item Cat. PGR Description 3";Code[100])
+         field(27;"Item Cat. PGR Description 3";Code[200])
         {
         }
-         field(28;"Item Cat. PGR Description 4";Code[100])
+         field(28;"Item Cat. PGR Description 4";Code[200])
+        {
+        }
+        field(29;"Salesperson Code"; Code[20])
+        {
+        }
+         field(30;"HFM Code"; Text[100])
+        {
+        }
+        field(31;"HFM Code Description"; Text[200])
         {
         }
 

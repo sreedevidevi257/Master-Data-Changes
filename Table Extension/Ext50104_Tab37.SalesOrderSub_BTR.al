@@ -75,19 +75,19 @@ tableextension 50104 Ext50104_SalesOrderSub_BTR extends "Sales Line"
             //     Rec."Shortcut Dimension 2 Code" := Rec."Shortcut Dimension 2 Code_DSSS";
             // end;
         }
-        field(50128;"Item Category PGR 1";Code[50])
+        field(50128;"Item Category PGR 1";Code[100])
         {
             editable = false;
         }
-        field(50129;"Item Category PGR 2";Code[50])
+        field(50129;"Item Category PGR 2";Code[100])
         {
             editable = false;
         }
-        field(50130;"Item Category PGR 3";Code[50])
+        field(50130;"Item Category PGR 3";Code[100])
         {
             editable = false;
         }
-        field(50131;"Item Category PGR 4";Code[50])
+        field(50131;"Item Category PGR 4";Code[100])
         {
             editable = false;
         }

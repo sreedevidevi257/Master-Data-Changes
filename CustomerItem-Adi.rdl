@@ -6950,6 +6950,9 @@ End Function
         <Field Name="CustomerItemSales_ItemCatPGRDesc4">
           <DataField>CustomerItemSales_ItemCatPGRDesc4</DataField>
         </Field>
+        <Field Name="CustomerItemSales_HFMCode">
+          <DataField>CustomerItemSales_HFMCode</DataField>
+        </Field>
         <Field Name="CustomerItemSales_SubCategory1">
           <DataField>CustomerItemSales_SubCategory1</DataField>
         </Field>
