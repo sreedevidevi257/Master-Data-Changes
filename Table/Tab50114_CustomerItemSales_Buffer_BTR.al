@@ -23,7 +23,7 @@ table 50120 "Customer Item Sales Buffer"
         {
             //DataClassification = ToBeClassified;
         }
-        field(6; "Description 2"; Text[50])
+        field(6; "Description 2"; Text[150])
         {
             //DataClassification = ToBeClassified;
         }
